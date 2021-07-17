@@ -21,14 +21,15 @@ for i in range(1,14664,1):
     weather_data = pd.read_csv(filepath)
     weather_data["Date"] = pd.to_datetime(weather_data["Date"])
 
-    sandy_loam = SoilClass(soilType='Clay') # 'SandyLoam'
+    soil_type = 'Clay' # 'SandyLoam'
+    soil_class = SoilClass(soilType=soil_type)
     maize = CropClass('Maize', PlantingDate='11/15')
     InitWC = InitWCClass(value=['FC']) # 0.2 or dynamic (Noemi's soilmoisture)/percent of rainfall
 
     model = AquaCropModel(SimStartTime=f'{2000}/11/15',
                           SimEndTime=f'{2014}/05/30',
                           wdf=weather_data,
-                          Soil=sandy_loam,
+                          Soil=soil_class,
                           Crop=maize,
                           InitWC=InitWC)
 

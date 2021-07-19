@@ -1,5 +1,5 @@
 # aquacrop_simulation
-Author: Sitian Xiong
+Repository Author: Sitian Xiong
 
 This repository currently contains a **run.py** file and a ***10_example_weather*** folder, which meets the minimum requirement of running AquaCrop.
 
